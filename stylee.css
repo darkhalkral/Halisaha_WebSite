@@ -1,0 +1,20 @@
+.deneme {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.denememargin{
+    margin-left: 50px;
+}
+table{
+    border-collapse: collapse;  
+} 
+
+@media screen and (max-width: 600px) {
+    .navbar .dropdown-menu .form-control {
+        width: 200px;
+    }
+    .denememargin{
+        margin-left: 0px;
+    }
+}
