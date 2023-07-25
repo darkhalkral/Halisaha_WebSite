@@ -85,7 +85,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                                     </div>
                                 </div>
                             </div>
-                            <div style="float:left;" class="card denememargin">
+                            <div style="float:left;" class="card denememargin2">
                                 <div class="card-header">
                                     <h1 class="h3 mb-0 text-gray-800">Ortalama Puan Tablosu</h1>
                                 </div>
@@ -119,7 +119,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                                     </table>
                                 </div>
                             </div>
-                            <div style="float:left;" class="card denememargin">
+                            <div style="float:left;" class="card denememargin2">
                                 <div class="card-header">
                                     <h1 class="h3 mb-0 text-gray-800">Oyuncuya Özel Puan Grafiği</h1>
                                 </div>

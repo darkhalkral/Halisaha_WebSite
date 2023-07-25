@@ -57,7 +57,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
         </nav>
         <div class="container-fluid">
             <div class="row justify-content-center">
-                <div class="col-xl-12 col-lg-12 col-md-9">
+                <div class="col-xl-12 col-lg-12 col-md-9 col-xs-5">
                     <div class="card o-hidden border-0 shadow-lg my-5 deneme">
                         <div class="card-header">
                             <h1 class="h3 mb-0 text-gray-800"><?php echo $_SESSION['name']; ?> için Maç Verileri
@@ -70,7 +70,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                                 </div>
                                 <div class="card-body">
                                     <div>
-                                        <table class="table table-bordered table-responsive" style="border-color: black;">
+                                        <table class="table table-bordered table-responsive tablewidthden" style="border-color: black;">
                                             <thead>
                                                 <tr>
                                                     <th>İsim</th>
@@ -113,7 +113,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                                     </div>
                                 </div>
                             </div>
-                            <div style="float:left;" class="card">
+                            <div style="float:left;" class="card denememargin">
                                 <div class="card-header">
                                     <h3 class="h3 mb-0 text-gray-800">Win-Lose Tablo</h3>
                                 </div>

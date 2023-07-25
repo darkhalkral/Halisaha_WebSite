@@ -6,6 +6,9 @@
 .denememargin{
     margin-left: 50px;
 }
+.denememargin2{
+    margin-left: 50px;
+}
 table{
     border-collapse: collapse;  
 } 
@@ -15,6 +18,12 @@ table{
         width: 200px;
     }
     .denememargin{
-        margin-left: 10%;
+        margin-left: 13%;
+    }
+    .denememargin2{
+        margin-left: 3%;
+    }
+    .tablewidthden{
+        max-width:390px;
     }
 }
