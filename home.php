@@ -16,7 +16,14 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
         $raterenk = "danger";
         $ratethumbs = "down";
     }
-
+    $sqlp="SELECT Round(AVG(Puan)) as Puan FROM oyuncupuan WHERE GirilenOyuncuId=".$row['OyuncuId']." GROUP BY MacId order by MacId desc LIMIT 1";
+    $resultp = mysqli_query($conn, $sqlp);
+    $rowp = mysqli_fetch_assoc($resultp);
+    $sonpuan = $rowp['Puan'];
+    $sqlap="SELECT Round(AVG(Puan)) as Puan FROM oyuncupuan WHERE GirilenOyuncuId=".$row['OyuncuId']." GROUP BY GirilenOyuncuId";
+    $resultap = mysqli_query($conn, $sqlap);
+    $rowap = mysqli_fetch_assoc($resultap);
+    $allpuan = $rowap['Puan'];
     $winrate = round($winrate * 100) . '%';
 ?>
 
@@ -29,8 +36,9 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
         <meta name="description" content="Amogus Halısaha Sitesi">
         <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-        <link rel="stylesheet" href="fontawesome-free/css/all.min.css">
-
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
+        <script src="https://use.fontawesome.com/6649d1fe76.js"></script>
+        <script src="https://kit.fontawesome.com/8d952dabb3.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="dist/css/adminlte.min.css">
         <title>Amogus Halısaha</title>
@@ -87,6 +95,21 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                                         </span>
                                     </div>
                                 </div>
+                                <div class="info-box bg-warning">
+                                    <span class="info-box-icon"><i class="fas fa-fire" style="color:red";></i></span>
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">WinStreak</span>
+                                        <span class="info-box-number"><?php echo $row['WinStreak']; ?></span>
+                                    </div>
+                                </div>
+                                <div class="info-box bg-info">
+                                    <span class="info-box-icon"><i class="fas fa-trophy"></i></span>
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Puan Durumum</span>
+                                        <span class="info-box-number">Son Maç Ort = <?php echo $sonpuan; ?><br>
+                                            Ortalama Puan = <?php echo $allpuan; ?></span>
+                                    </span>
+                                    </div>
                             </div>
                         </div>
                     </div>
