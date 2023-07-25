@@ -13,4 +13,3 @@ while ($row = mysqli_fetch_assoc($result)) {
     $data['values'][] = $row['Puan'];
 }
 echo json_encode($data);
-?>

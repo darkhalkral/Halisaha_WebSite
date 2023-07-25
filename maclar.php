@@ -84,85 +84,85 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                                                             echo "<td>" . $row['Isim'] . "</td>";
                                                     }
                                                     ?>
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                    <tr>
-                                                        <td><strong>WinStreak</strong></td>
-                                                        <?php
-                                                        $sql = "SELECT * FROM oyuncu Where WinStreak>0 ORDER BY WinStreak DESC";
-                                                        $result = mysqli_query($conn, $sql);
-                                                        while ($row = mysqli_fetch_assoc($result)) {
-                                                            if ($row['WinStreak']>=3)
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><strong>WinStreak</strong></td>
+                                                    <?php
+                                                    $sql = "SELECT * FROM oyuncu Where WinStreak>0 ORDER BY WinStreak DESC";
+                                                    $result = mysqli_query($conn, $sql);
+                                                    while ($row = mysqli_fetch_assoc($result)) {
+                                                        if ($row['WinStreak'] >= 3)
                                                             $renk2 = "danger";
-                                                            else if($row['WinStreak']>1)
+                                                        else if ($row['WinStreak'] > 1)
                                                             $renk2 = "warning";
-                                                            else
+                                                        else
                                                             $renk2 = "success";
-                                                            if ($row['OyuncuId'] == $oyuncuid)
-                                                                echo "<td bgcolor=#bee5eb>" . $row['WinStreak'] . "</td>";
-                                                            else
-                                                                echo "<td style='font-size:130%; text-align:center;'><span class='badge bg-".$renk2."'>" . $row['WinStreak'] . "</span></td>";
-                                                        }
-                                                        ?>
-                                                    </tr>
+                                                        if ($row['OyuncuId'] == $oyuncuid)
+                                                            echo "<td bgcolor=#bee5eb>" . $row['WinStreak'] . "</td>";
+                                                        else
+                                                            echo "<td style='font-size:130%; text-align:center;'><span class='badge bg-" . $renk2 . "'>" . $row['WinStreak'] . "</span></td>";
+                                                    }
+                                                    ?>
+                                                </tr>
 
                                             </tbody>
 
                                         </table>
                                     </div>
                                 </div>
-                                    </div>
-                                    <div style="float:left;" class="card">
-                                        <div class="card-header">
-                                            <h3 class="h3 mb-0 text-gray-800">Win-Lose Tablo</h3>
-                                        </div>
-                                        <div class="card-body">
-                                            <table style="border-color: black;" class="table  table-responsive" id="dataTable" width="100%">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Oyuncu</th>
-                                                        <th>Win</th>
-                                                        <th>Lose</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <?php
-                                                    $sql = "SELECT * FROM oyuncu ORDER BY Win DESC";
-                                                    $result = mysqli_query($conn, $sql);
-                                                    while ($row = mysqli_fetch_assoc($result)) {
-                                                        if ($row['OyuncuId'] == $oyuncuid)
-                                                            echo "<tr bgcolor=#bee5eb>";
-                                                        else
-                                                            echo "<tr>";
-                                                        echo "<td>" . $row['Isim'] . "</td>";
-                                                        echo "<td>" . $row['Win'] . "</td>";
-                                                        echo "<td>" . $row['Lose'] . "</td>";
-                                                        echo "</tr>";
-                                                    }
-                                                    ?>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <div style="float:left;" class="card denememargin">
-                                        <div class="card-header">
-                                            <h3 class="h3 mb-0 text-gray-800">Maçlar</h3>
-                                        </div>
-                                        <div class="card-body">
-                                            <div>
-                                                <table class="table table-bordered table-responsive" id="dataTable" width="100%">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Tarih</th>
-                                                            <th>Takım1</th>
-                                                            <th>Skor</th>
-                                                            <th>Takım2</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <?php
-                                                        $sql = "SELECT m.Tarih as Tarih,
+                            </div>
+                            <div style="float:left;" class="card">
+                                <div class="card-header">
+                                    <h3 class="h3 mb-0 text-gray-800">Win-Lose Tablo</h3>
+                                </div>
+                                <div class="card-body">
+                                    <table style="border-color: black;" class="table  table-responsive" id="dataTable" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Oyuncu</th>
+                                                <th>Win</th>
+                                                <th>Lose</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            $sql = "SELECT * FROM oyuncu ORDER BY Win DESC";
+                                            $result = mysqli_query($conn, $sql);
+                                            while ($row = mysqli_fetch_assoc($result)) {
+                                                if ($row['OyuncuId'] == $oyuncuid)
+                                                    echo "<tr bgcolor=#bee5eb>";
+                                                else
+                                                    echo "<tr>";
+                                                echo "<td>" . $row['Isim'] . "</td>";
+                                                echo "<td>" . $row['Win'] . "</td>";
+                                                echo "<td>" . $row['Lose'] . "</td>";
+                                                echo "</tr>";
+                                            }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div style="float:left;" class="card denememargin">
+                                <div class="card-header">
+                                    <h3 class="h3 mb-0 text-gray-800">Maçlar</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div>
+                                        <table class="table table-bordered table-responsive" id="dataTable" width="100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Tarih</th>
+                                                    <th>Takım1</th>
+                                                    <th>Skor</th>
+                                                    <th>Takım2</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                $sql = "SELECT m.Tarih as Tarih,
             t1.oyuncu1 AS Takim1Oyuncu1,
             t1.oyuncu2 AS Takim1Oyuncu2,
             t1.oyuncu3 AS Takim1Oyuncu3,
@@ -186,112 +186,112 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
          INNER JOIN takim t2 ON m.Takim2Id = t2.TakimId
          ORDER BY Tarih DESC";
 
-                                                        $result = mysqli_query($conn, $sql);
+                                                $result = mysqli_query($conn, $sql);
 
-                                                        while ($row = mysqli_fetch_assoc($result)) {
-                                                            if ($row['Takim1Oyuncu1'] == $oyuncuid || $row['Takim1Oyuncu2'] == $oyuncuid || $row['Takim1Oyuncu3'] == $oyuncuid || $row['Takim1Oyuncu4'] == $oyuncuid || $row['Takim1Oyuncu5'] == $oyuncuid || $row['Takim1Oyuncu6'] == $oyuncuid || $row['Takim1Oyuncu7'] == $oyuncuid || $row['Takim1Oyuncu8'] == $oyuncuid)
-                                                                $bgcolor = "#c3e6cb";
-                                                            else if ($row['Takim2Oyuncu1'] == $oyuncuid || $row['Takim2Oyuncu2'] == $oyuncuid || $row['Takim2Oyuncu3'] == $oyuncuid || $row['Takim2Oyuncu4'] == $oyuncuid || $row['Takim2Oyuncu5'] == $oyuncuid || $row['Takim2Oyuncu6'] == $oyuncuid || $row['Takim2Oyuncu7'] == $oyuncuid || $row['Takim2Oyuncu8'] == $oyuncuid)
-                                                                $bgcolor = "#f5c6cb";
-                                                            else
-                                                                $bgcolor = "#ffeeba";
+                                                while ($row = mysqli_fetch_assoc($result)) {
+                                                    if ($row['Takim1Oyuncu1'] == $oyuncuid || $row['Takim1Oyuncu2'] == $oyuncuid || $row['Takim1Oyuncu3'] == $oyuncuid || $row['Takim1Oyuncu4'] == $oyuncuid || $row['Takim1Oyuncu5'] == $oyuncuid || $row['Takim1Oyuncu6'] == $oyuncuid || $row['Takim1Oyuncu7'] == $oyuncuid || $row['Takim1Oyuncu8'] == $oyuncuid)
+                                                        $bgcolor = "#c3e6cb";
+                                                    else if ($row['Takim2Oyuncu1'] == $oyuncuid || $row['Takim2Oyuncu2'] == $oyuncuid || $row['Takim2Oyuncu3'] == $oyuncuid || $row['Takim2Oyuncu4'] == $oyuncuid || $row['Takim2Oyuncu5'] == $oyuncuid || $row['Takim2Oyuncu6'] == $oyuncuid || $row['Takim2Oyuncu7'] == $oyuncuid || $row['Takim2Oyuncu8'] == $oyuncuid)
+                                                        $bgcolor = "#f5c6cb";
+                                                    else
+                                                        $bgcolor = "#ffeeba";
 
-                                                            for ($i = 8; $i >= 4; $i--) {
-                                                                echo "<tr bgcolor=$bgcolor>";
-                                                                if ($row['Takim1Oyuncu' . $i] != NULL || $row['Takim2Oyuncu' . $i] != NULL) {
-                                                                    echo "<td style='vertical-align:middle' rowspan='" . $i . "'>" . $row['Tarih'] . "</td>";
+                                                    for ($i = 8; $i >= 4; $i--) {
+                                                        echo "<tr bgcolor=$bgcolor>";
+                                                        if ($row['Takim1Oyuncu' . $i] != NULL || $row['Takim2Oyuncu' . $i] != NULL) {
+                                                            echo "<td style='vertical-align:middle' rowspan='" . $i . "'>" . $row['Tarih'] . "</td>";
 
-                                                                    for ($j = 1; $j <= $i; $j++) {
-                                                                        if ($j != 1)
-                                                                            echo "<tr bgcolor=$bgcolor>";
+                                                            for ($j = 1; $j <= $i; $j++) {
+                                                                if ($j != 1)
+                                                                    echo "<tr bgcolor=$bgcolor>";
 
-                                                                        if ($row['Takim1Oyuncu' . $j] == NULL)
-                                                                            echo "<td></td>";
-                                                                        else {
-                                                                            $sql2 = "SELECT * FROM oyuncu WHERE OyuncuId='" . $row['Takim1Oyuncu' . $j] . "'";
-                                                                            $result2 = mysqli_query($conn, $sql2);
-                                                                            $row2 = mysqli_fetch_assoc($result2);
-                                                                            echo "<td>" . $row2['Isim'] . "</td>";
-                                                                        }
-
-                                                                        if ($j == 1) {
-                                                                            echo "<td style='vertical-align:middle' rowspan='" . $i . "'>" . $row['Takim1Skor'] . " - " . $row['Takim2Skor'] . "</td>";
-                                                                        }
-
-                                                                        if ($row['Takim2Oyuncu' . $j] == NULL)
-                                                                            echo "<td></td>";
-                                                                        else {
-                                                                            $sql3 = "SELECT * FROM oyuncu WHERE OyuncuId='" . $row['Takim2Oyuncu' . $j] . "'";
-                                                                            $result3 = mysqli_query($conn, $sql3);
-                                                                            $row3 = mysqli_fetch_assoc($result3);
-                                                                            echo "<td>" . $row3['Isim'] . "</td>";
-                                                                        }
-
-                                                                        echo "</tr>";
-                                                                    }
-                                                                    echo "<tr><td colspan='5'><hr style='border-color: black;'></td></tr>";
-                                                                    break;
+                                                                if ($row['Takim1Oyuncu' . $j] == NULL)
+                                                                    echo "<td></td>";
+                                                                else {
+                                                                    $sql2 = "SELECT * FROM oyuncu WHERE OyuncuId='" . $row['Takim1Oyuncu' . $j] . "'";
+                                                                    $result2 = mysqli_query($conn, $sql2);
+                                                                    $row2 = mysqli_fetch_assoc($result2);
+                                                                    echo "<td>" . $row2['Isim'] . "</td>";
                                                                 }
+
+                                                                if ($j == 1) {
+                                                                    echo "<td style='vertical-align:middle' rowspan='" . $i . "'>" . $row['Takim1Skor'] . " - " . $row['Takim2Skor'] . "</td>";
+                                                                }
+
+                                                                if ($row['Takim2Oyuncu' . $j] == NULL)
+                                                                    echo "<td></td>";
+                                                                else {
+                                                                    $sql3 = "SELECT * FROM oyuncu WHERE OyuncuId='" . $row['Takim2Oyuncu' . $j] . "'";
+                                                                    $result3 = mysqli_query($conn, $sql3);
+                                                                    $row3 = mysqli_fetch_assoc($result3);
+                                                                    echo "<td>" . $row3['Isim'] . "</td>";
+                                                                }
+
+                                                                echo "</tr>";
                                                             }
+                                                            echo "<tr><td colspan='5'><hr style='border-color: black;'></td></tr>";
+                                                            break;
                                                         }
-                                                        ?>
-
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div style="float:left;" class="card denememargin">
-                                        <div class="card-header">
-                                            <h3 class="h3 mb-0 text-gray-800">Winrate Oranı</h3>
-                                        </div>
-                                        <div class="card-body">
-                                            <table class="table table-responsive" id="dataTable" width="100%">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Oyuncu</th>
-                                                        <th>Winrate</th>
-                                                        <th>Oran&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <?php
-                                                    $sql4 = "SELECT OyuncuId,Isim,Round((win/(win+lose))*100) as Winrate FROM oyuncu ORDER BY Winrate DESC;";
-                                                    $result4 = mysqli_query($conn, $sql4);
-                                                    while ($row4 = mysqli_fetch_assoc($result4)) {
-                                                        if ($row4['OyuncuId'] == $oyuncuid)
-                                                            echo "<tr bgcolor=#bee5eb>";
-                                                        else
-                                                            echo "<tr>";
-                                                        echo "<td>" . $row4['Isim'] . "</td>";
-                                                        if ($row4['Winrate'] >= 60)
-                                                            echo "<td><span class='badge bg-success'>" . $row4['Winrate'] . "%</span></td>";
-                                                        else if ($row4['Winrate'] >= 40)
-                                                            echo "<td><span class='badge bg-warning'>" . $row4['Winrate'] . "%</span></td>";
-                                                        else
-                                                            echo "<td><span class='badge bg-danger'>" . $row4['Winrate'] . "%</span></td>";
-                                                        echo "<td><div class='progress'>
-                                                <div class='progress-bar' style='width:" . $row4['Winrate'] . "%'></div>
-                                            </div></td>";
-                                                        echo "</tr>";
                                                     }
+                                                }
+                                                ?>
 
-                                                    ?>
-                                                </tbody>
-                                            </table>
-                                        </div>
+                                            </tbody>
+                                        </table>
                                     </div>
-                                </div>
-                                <div>
                                 </div>
                             </div>
+                            <div style="float:left;" class="card denememargin">
+                                <div class="card-header">
+                                    <h3 class="h3 mb-0 text-gray-800">Winrate Oranı</h3>
+                                </div>
+                                <div class="card-body">
+                                    <table class="table table-responsive" id="dataTable" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Oyuncu</th>
+                                                <th>Winrate</th>
+                                                <th>Oran&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            $sql4 = "SELECT OyuncuId,Isim,Round((win/(win+lose))*100) as Winrate FROM oyuncu ORDER BY Winrate DESC;";
+                                            $result4 = mysqli_query($conn, $sql4);
+                                            while ($row4 = mysqli_fetch_assoc($result4)) {
+                                                if ($row4['OyuncuId'] == $oyuncuid)
+                                                    echo "<tr bgcolor=#bee5eb>";
+                                                else
+                                                    echo "<tr>";
+                                                echo "<td>" . $row4['Isim'] . "</td>";
+                                                if ($row4['Winrate'] >= 60)
+                                                    echo "<td><span class='badge bg-success'>" . $row4['Winrate'] . "%</span></td>";
+                                                else if ($row4['Winrate'] >= 40)
+                                                    echo "<td><span class='badge bg-warning'>" . $row4['Winrate'] . "%</span></td>";
+                                                else
+                                                    echo "<td><span class='badge bg-danger'>" . $row4['Winrate'] . "%</span></td>";
+                                                echo "<td><div class='progress'>
+                                                <div class='progress-bar' style='width:" . $row4['Winrate'] . "%'></div>
+                                            </div></td>";
+                                                echo "</tr>";
+                                            }
+
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
                         </div>
                     </div>
                 </div>
             </div>
-            <footer class="container">
-                <p>© 2023-2024 Darkhalkral, halidkrgz.</p>
-            </footer>
+        </div>
+        </div>
+        <footer class="container">
+            <p>© 2023-2024 Darkhalkral, halidkrgz.</p>
+        </footer>
     </body>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

@@ -124,9 +124,9 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                                     <h1 class="h3 mb-0 text-gray-800">Oyuncuya Özel Puan Grafiği</h1>
                                 </div>
                                 <div class="card-body">
-                                    <select class="form-control" id="exampleFormControlSelect1" >
+                                    <select class="form-control" id="exampleFormControlSelect1">
                                         <?php
-                                        echo "<option value='' hidden>".$rowo["Isim"]."</option>";
+                                        echo "<option value='' hidden>" . $rowo["Isim"] . "</option>";
                                         $sql = "SELECT * FROM oyuncupuan INNER JOIN oyuncu ON oyuncupuan.GirilenOyuncuId = oyuncu.OyuncuId GROUP BY oyuncupuan.GirilenOyuncuId";
                                         $result = mysqli_query($conn, $sql);
                                         while ($row = mysqli_fetch_assoc($result)) {

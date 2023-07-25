@@ -16,11 +16,11 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
         $raterenk = "danger";
         $ratethumbs = "down";
     }
-    $sqlp="SELECT Round(AVG(Puan)) as Puan FROM oyuncupuan WHERE GirilenOyuncuId=".$row['OyuncuId']." GROUP BY MacId order by MacId desc LIMIT 1";
+    $sqlp = "SELECT Round(AVG(Puan)) as Puan FROM oyuncupuan WHERE GirilenOyuncuId=" . $row['OyuncuId'] . " GROUP BY MacId order by MacId desc LIMIT 1";
     $resultp = mysqli_query($conn, $sqlp);
     $rowp = mysqli_fetch_assoc($resultp);
     $sonpuan = $rowp['Puan'];
-    $sqlap="SELECT Round(AVG(Puan)) as Puan FROM oyuncupuan WHERE GirilenOyuncuId=".$row['OyuncuId']." GROUP BY GirilenOyuncuId";
+    $sqlap = "SELECT Round(AVG(Puan)) as Puan FROM oyuncupuan WHERE GirilenOyuncuId=" . $row['OyuncuId'] . " GROUP BY GirilenOyuncuId";
     $resultap = mysqli_query($conn, $sqlap);
     $rowap = mysqli_fetch_assoc($resultap);
     $allpuan = $rowap['Puan'];
@@ -96,7 +96,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                                     </div>
                                 </div>
                                 <div class="info-box bg-warning">
-                                    <span class="info-box-icon"><i class="fas fa-fire" style="color:red";></i></span>
+                                    <span class="info-box-icon"><i class="fas fa-fire" style="color:red" ;></i></span>
                                     <div class="info-box-content">
                                         <span class="info-box-text">WinStreak</span>
                                         <span class="info-box-number"><?php echo $row['WinStreak']; ?></span>
@@ -108,14 +108,14 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                                         <span class="info-box-text">Puan Durumum</span>
                                         <span class="info-box-number">Son Maç Ort = <?php echo $sonpuan; ?><br>
                                             Ortalama Puan = <?php echo $allpuan; ?></span>
-                                    </span>
+                                        </span>
                                     </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </body>
     <footer class="container">
         <p>© 2023-2024 Darkhalkral, halidkrgz.</p>
