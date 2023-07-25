@@ -76,11 +76,11 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-xl-8 col-lg-12 col-md-9">
-                    <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card o-hidden border-0 shadow-lg my-5 deneme">
                         <div class="card-header">
                             <h1 class="h3 mb-0 text-gray-800">Hoşgelmişen, <?php echo $_SESSION['name']; ?></h1>
                         </div>
-                        <div class="card-body j">
+                        <div class="card-body">
                             <div class="col-md-4 col-sm-6 col-12">
                                 <div class="info-box bg-<?php echo $raterenk; ?>">
                                     <span class="info-box-icon"><i class="far fa-thumbs-<?php echo $ratethumbs; ?>"></i></span>
@@ -120,7 +120,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
     <footer class="container">
         <p>© 2023-2024 Darkhalkral, halidkrgz.</p>
     </footer>
-    <script src="https://code.query.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
