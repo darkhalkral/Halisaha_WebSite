@@ -64,6 +64,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                             </h1>
                         </div>
                         <div class="card-body">
+                            <center>
                             <div class="card" style="max-width:600px;">
                                 <div class="card-header">
                                     <h3 class="h3 mb-0 text-gray-800">Winstreak</h3>
@@ -113,6 +114,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                                     </div>
                                 </div>
                             </div>
+                            </center>
                             <div style="float:left;" class="card denememargin">
                                 <div class="card-header">
                                     <h3 class="h3 mb-0 text-gray-800">Win-Lose Tablo</h3>
