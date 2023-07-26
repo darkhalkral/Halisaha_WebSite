@@ -64,7 +64,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                             </h1>
                         </div>
                         <div class="card-body">
-                            <div class="card">
+                            <div class="card" style="max-width:600px;">
                                 <div class="card-header">
                                     <h3 class="h3 mb-0 text-gray-800">Winstreak</h3>
                                 </div>
@@ -118,7 +118,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                                     <h3 class="h3 mb-0 text-gray-800">Win-Lose Tablo</h3>
                                 </div>
                                 <div class="card-body">
-                                    <table style="border-color: black;" class="table  table-responsive" id="dataTable" width="100%">
+                                    <table style="border-color: black;max-height:600px;padding:20px;" class="table  table-responsive" id="dataTable" >
                                         <thead>
                                             <tr>
                                                 <th>Oyuncu</th>
@@ -151,7 +151,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                                 </div>
                                 <div class="card-body">
                                     <div>
-                                        <table class="table table-bordered table-responsive" id="dataTable" width="100%">
+                                        <table class="table table-bordered table-responsive" style="max-height:600px;padding:20px;" id="dataTable" width="100%">
                                             <thead>
                                                 <tr>
                                                     <th>Tarih</th>
@@ -246,7 +246,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                                     <h3 class="h3 mb-0 text-gray-800">Winrate Oranı</h3>
                                 </div>
                                 <div class="card-body">
-                                    <table class="table table-responsive" id="dataTable" width="100%">
+                                    <table class="table table-responsive" style="max-height:600px;padding:20px;" id="dataTable" width="100%">
                                         <thead>
                                             <tr>
                                                 <th>Oyuncu</th>
